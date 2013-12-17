@@ -1,0 +1,7 @@
+hadoop jar kwclassify.jar com.zyx.exfeature.KWSeg your_path/keyword_class.txt your_path/kwseg false
+hadoop jar kwclassify.jar com.zyx.exfeature.ExFeature your_path/kwseg you_path/ex_features
+hadoop jar kwclassify.jar com.zyx.svm.GroupSVMClassify your_path/ex_features/test_data/ your_path/ex_features/train_data/part-r-00000 your_path/group_out 0 0
+hadoop jar kwclassify.jar com.zyx.svm.VoteResult your_path/group_out your_path/vote_result
+
+注：除了在第一条命令的your_path/keyword_class.txt中的your_path是原文件的路径外，
+    其他位置的your_path可以是同一个路径。
